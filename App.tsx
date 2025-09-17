@@ -1,30 +1,31 @@
 import React, { useState, useEffect } from 'react'
-import { Toaster } from './components/ui/sonner'
-import { Button } from './components/ui/button'
+import { Toaster } from '../components/ui/sonner'
+import { Button } from '../components/ui/button'
 import { motion } from 'motion/react'
 
 // Import all the separate page components
-import AboutUsPage from './AboutUs_FINAL_VERSION'
-import CruisesPage from './Cruises_FINAL_VERSION'
-import TravelOptionsPage from './TravelOptions_FINAL_VERSION'
-import ContactPage from './Contact_FINAL_VERSION'
-import TravLinStoriesPage from './TravLinStories_FINAL_VERSION'
+import AboutUsPage from '../AboutUs_FINAL_VERSION'
+import CruisesPage from '../Cruises_FINAL_VERSION'
+import TravelOptionsPage from '../TravelOptions_FINAL_VERSION'
+import ContactPage from '../Contact_FINAL_VERSION'
+// 🔥 ALL FIXED - BRAND COLORS + BETTER IMAGES + WORKING EMAILJS
+import TravLinStoriesPage from '../TravLinStories_FIXED_FINAL'
 
 // Import home page components
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About_WORKING'
-import OurValues from './components/OurValues'
-import SlidingImageSeparator from './components/SlidingImageSeparator'
-import WhatsTrending from './components/WhatsTrending'
-import Credentials from './components/Credentials'
-import Testimonials from './components/Testimonials'
-import TravelInsurance from './components/TravelInsurance'
-import TravelBlog from './components/TravelBlog'
-import AITravelPlannerWidgetExpanded from './components/AITravelPlannerWidgetExpanded'
-import ContactUs from './components/ContactUs'
-import Footer from './components/Footer'
-import SEOHead from './components/SEOHead'
+import Header from '../components/Header'
+import Hero from '../components/Hero'
+import About from '../components/About_WORKING'
+import OurValues from '../components/OurValues'
+import SlidingImageSeparator from '../components/SlidingImageSeparator'
+import WhatsTrending from '../components/WhatsTrending'
+import Credentials from '../components/Credentials'
+import Testimonials from '../components/Testimonials'
+import TravelInsurance from '../components/TravelInsurance'
+// Travel Blog removed from home page - now only on Stories page
+import AITravelPlannerWidgetExpanded from '../components/AITravelPlannerWidgetExpanded'
+import ContactUs from '../components/ContactUs'
+import Footer from '../components/Footer'
+import SEOHead from '../components/SEOHead'
 
 type PageType = 'home' | 'about' | 'cruises' | 'travel-options' | 'contact' | 'stories'
 
@@ -162,6 +163,7 @@ export default function App() {
         )
       
       case 'stories':
+        console.log('🚀 NUCLEAR CLEAN VERSION - ZERO SEARCH INTERFACES!')
         return (
           <TravLinStoriesPage
             onNavigateBack={navigateToHome}
@@ -314,9 +316,9 @@ export default function App() {
                 </div>
               </motion.section>
               
-              {/* 6. TRAVLIN STORIES PRELUDE - Enhanced with animations */}
+              {/* 6. TRAVEL STORIES PREVIEW - Link to Stories Page */}
               <motion.section 
-                id="stories-prelude" 
+                id="travel-stories-preview" 
                 className="section-spacing section-white"
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -324,7 +326,7 @@ export default function App() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
                 <div className="content-separator"></div>
-                <div className="max-w-7xl mx-auto text-center">
+                <div className="max-w-7xl mx-auto text-center px-6">
                   <motion.h2 
                     className="section-heading"
                     initial={{ y: 30, opacity: 0 }}
@@ -335,27 +337,27 @@ export default function App() {
                     TravLin Stories
                   </motion.h2>
                   <motion.p 
-                    className="text-xl text-gray-600 mb-12 max-w-5xl mx-auto leading-relaxed"
+                    className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed"
                     initial={{ y: 30, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                   >
-                    Get inspired with our curated travel stories, insider tips, and expert advice that transform ordinary trips into extraordinary adventures. Discover hidden gems, cultural insights, and destination secrets that feed your wanderlust. Got a great TravLin story or want to see something specific? We'd love to hear from you!
+                    Discover incredible journeys, insider travel secrets, and expert destination guides. From cruise cabin tips to state-by-state adventure guides - your next extraordinary escape starts with our stories!
                   </motion.p>
+                  
                   <motion.div
+                    className="text-center"
                     initial={{ y: 40, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.3 }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
                   >
                     <Button 
                       size="lg" 
                       onClick={navigateToStories}
-                      className="py-5 px-10 text-lg font-semibold text-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl uppercase tracking-wider min-h-[46px] lg:min-h-[50px]"
-                      style={{ backgroundColor: 'var(--brand-yellow)' }}
+                      className="py-5 px-10 text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl uppercase tracking-wider min-h-[46px] lg:min-h-[50px] hover:scale-105"
+                      style={{ backgroundColor: 'var(--brand-yellow)', color: 'var(--gray-800)' }}
                     >
                       READ OUR STORIES
                     </Button>
